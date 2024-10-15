@@ -1,0 +1,274 @@
+/***** Utilitis Section *****/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  /* border: 2px solid red; */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --bg-color: #030722;
+  --light-color: #F6FBF7;
+  --primary-color: #6215ae;
+  --nature-color: rgb(23, 237, 23);
+  --danger-color: red;
+}
+
+body {
+  min-height: 75vh;
+  background-color: var(--bg-color);
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: .5rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  border: none;
+  -o-border-radius: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--nature-color);
+
+}
+
+.btn:active {
+  background-color: rgb(11, 197, 11);
+}
+
+/***** End Utilitis Section *****/
+
+/***** Main Section *****/
+.container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 12rem;
+  margin-bottom: 5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: .75rem;
+
+  & img {
+    width: 70px;
+  }
+
+  & h1 {
+    color: var(--light-color);
+    font-size: 2.5rem;
+  }
+}
+
+
+
+.search {
+  margin: 1.75rem auto;
+  display: relative;
+  /* border: 1px solid pink; */
+  width: 40%;
+
+  & input {
+    outline: none;
+    padding: 1rem 4rem 1rem 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  & button {
+    position: absolute;
+    right: 33.9%;
+    border: none;
+    outline: none;
+    background: transparent;
+
+
+    & i {
+      font-size: 1.7rem;
+      cursor: pointer;
+      padding: .9rem;
+      border-top-right-radius: .5rem;
+      border-bottom-right-radius: .5rem;
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      transform: 3s;
+      -webkit-transform: 3s;
+      -moz-transform: 3s;
+      -ms-transform: 3s;
+      -o-transform: 3s;
+
+
+      &:hover {
+        background-color: rgb(79, 0, 128);
+      }
+
+      &:active {
+        background-color: rgb(134, 44, 189);
+        color: rgb(218, 212, 212);
+      }
+    }
+  }
+}
+
+.listOfTodo {
+  color: white;
+  /* border: 2px solid red; */
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+
+  &>div {
+    display: flex;
+    margin: auto;
+    width: 40%;
+    margin-bottom: .8rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+
+
+    &:hover {
+      background-color: var(--light-color);
+      color: var(--primary-color);
+
+      & .edit {
+        color: var(--nature-color);
+      }
+
+      & .delete {
+        color: var(--danger-color);
+      }
+    }
+
+    & li {
+      list-style: none;
+      text-transform: capitalize;
+    }
+
+    & div {
+      display: flex;
+      gap: 1rem;
+
+      & i {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#check-btn {
+  text-transform: uppercase;
+  display: block;
+  margin: auto;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+
+  &:hover {
+    animation: btn-anim 1s;
+    -webkit-animation: btn-anim .5s forwards;
+  }
+}
+
+@keyframes btn-anim {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    height: 100%;
+  }
+}
+
+/***** End Main Section *****/
+
+
+/*? RESPONSIVE */
+@media only screen and (max-width: 885px){
+  .search{
+    width: 50%;
+
+    & button{
+      right: 29.9%;
+    }
+  }
+
+  .listOfTodo>div{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 649px){
+  .search{
+    width: 75%;
+
+    & button{
+      right: 19.8%;
+    }
+  }
+
+  .listOfTodo>div{
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 449px){
+  html{
+    font-size: 8px;
+  }
+
+  .search{
+    width: 75%;
+
+    & button i{
+      padding: 1rem;
+      font-size: 2rem;
+    }
+  }
+
+  .listOfTodo>div{
+    width: 75%;
+  }
+}
