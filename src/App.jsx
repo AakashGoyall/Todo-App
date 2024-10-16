@@ -17,7 +17,7 @@ export default function App() {
   const [list, setList] = useState(getLocalStorage());
   const [btn, setBtn] = useState("Check list");
 
-  //* add item when user click on add button
+  //* Add item when user click on add button
   const addItem = () => {
     if(inputValue != ""){
       console.log("add");
@@ -68,22 +68,6 @@ export default function App() {
     <>
       <div className="container">
         <Header />
-
-        {/* <form onSubmit={submit}>
-          <div className="search">
-            <input
-              type="text"
-              id="text"
-              value={inputValue}
-              onChange={update}
-              placeholder="Add Item of To-Do List"
-              autoComplete="off"
-            />
-            <button onClick={addItem}>
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-        </form> */}
 
         <Form
           inputValue={inputValue}
