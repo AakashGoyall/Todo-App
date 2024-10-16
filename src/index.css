@@ -140,6 +140,7 @@ body {
 
   &>div {
     display: flex;
+    gap: 1.5rem;
     margin: auto;
     width: 40%;
     margin-bottom: .8rem;
@@ -170,6 +171,7 @@ body {
     & li {
       list-style: none;
       text-transform: capitalize;
+      text-align: justify;
     }
 
     & div {
